@@ -10,6 +10,7 @@ cp /mnt/updated/encoder.py .
 SIG_ALGS="falcon512 dilithium2 rainbowIclassic"
 KEX_ALGS="kyber512 ntruhps2048509 lightsaber"
 TARGET_DIR="/mnt/certs"
+NUM_CERTS=1000
 
 if [ ! -d  $TARGET_DIR ]; then
     mkdir -p $TARGET_DIR
@@ -22,7 +23,7 @@ for SIG_ALG in $SIG_ALGS; do
         export INT_SIGALG=$SIG_ALG
         export LEAF_ALG=$KALG
 
-        for i in {1..1000}; do
+        for i in {1..${NUM_CERTS}}; do
             NUM=$(printf "%04d" $i)
             echo "Doing ${ROOT_SIGALG} x ${LEAF_ALG} number ${NUM} now."
             python3 encoder.py
