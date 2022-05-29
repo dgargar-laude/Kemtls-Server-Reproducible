@@ -23,7 +23,7 @@ for SIG_ALG in $SIG_ALGS; do
         export INT_SIGALG=$SIG_ALG
         export LEAF_ALG=$KALG
 
-        for i in {1..${NUM_CERTS}}; do
+        for i in $(seq 1 ${NUM_CERTS}); do
             NUM=$(printf "%04d" $i)
             echo "Doing ${ROOT_SIGALG} x ${LEAF_ALG} number ${NUM} now."
             python3 encoder.py
