@@ -6,4 +6,5 @@ RUN apt-get -y update && \
      rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install asn1
+RUN rustup default nightly && rustup update 
 
