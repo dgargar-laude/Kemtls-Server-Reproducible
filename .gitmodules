@@ -1,4 +1,3 @@
 [submodule "kemtls-experiment"]
 	path = kemtls-experiment
 	url = https://github.com/dgargar-laude/kemtls-experiment.git 
-	branch = thesis
